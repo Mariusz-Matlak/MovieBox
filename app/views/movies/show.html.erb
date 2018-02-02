@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">  <%= @movie.name %></h5>
+      <div class="card-body card-movie">
+        <div class="movie-info">
+
+          <%= image_tag @movie.image.url(:medium) %>
+
+          <div class="movie-text">
+            <p>
+              <strong>Desc:</strong>
+              <%= @movie.desc %>
+            </p>
+
+            <p>
+              <strong>Movie length:</strong>
+              <%= @movie.movie_length %>
+            </p>
+
+            <p>
+              <strong>Director:</strong>
+              <%= @movie.director %>
+            </p>
+          </div>
+        </div>
+
+        <div class="movie-buttons">
+          <%= link_to 'Order that movie', new_movie_order_path(@movie.id), class: 'btn btn-danger' %>
+          <%= link_to 'Back', movies_path, class: 'btn btn-primary' %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
